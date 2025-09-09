@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "MyConfigClient": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SPRING__APPLICATION__NAME": "myapp",
+        "SPRING__PROFILES__ACTIVE": "Development",
+        "SPRING__CLOUD__CONFIG__URI": "http://localhost:8888"
+      }
+    }
+  }
+}
