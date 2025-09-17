@@ -49,4 +49,19 @@ export class DateFormatDirective {
             .replace('MM', mm)
             .replace('dd', dd);
     }
+
+    private formatInputDate(date: Date | null, model: NgModel) {
+        if (!date) return;
+
+        const yyyy = date.getFullYear();
+        const mm = ('0' + (date.getMonth() + 1)).slice(-2);
+        const dd = ('0' + date.getDate()).slice(-2);
+
+        const formatted = `${yyyy}/${mm}/${dd}`;
+
+        // Update the underlying NgModel value
+        model.viewToModelUpdate(date); // keep model as Date object
+        // Update the input display
+        model.control.setValue(formatted, { emitEvent: false });
+    }
 }
